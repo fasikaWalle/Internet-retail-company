@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     include:{
       model:Product
     }
-  }).then(data=>{
+  }).then(data=>{``
     res.json(data)
   })
 });
@@ -23,8 +23,7 @@ router.get('/:id', (req, res) => {
       id:req.params.id
     },
     include:{
-      model:Product,
-      attriboutes:[]
+      model:Product
     }
   }).then(data=>{
     if(!data){
@@ -47,11 +46,32 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  Category.update(req.body,{
+    where:{
+      id:req.params.id
+    }
+  }).then(dbCatagory=>{
+    if(!dbCatagory){res.status(404).json({message:'id not found'})
+    return;
+  }
+  res.json(dbCatagory)
+  }).catch(err=>{res.status(500).json(err)})
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
-  
+  Category.destroy({
+    where:{
+      id:req.params.id
+    }
+  }).then(dbCatagory=>{
+    if(!dbCatagory){res.status(404).json({message:'id not found'})
+    return;
+  }
+    res.json(dbCatagory)
+  }).catch(err=>{
+    res.json(err)
+  })
 });
 
 module.exports = router;
