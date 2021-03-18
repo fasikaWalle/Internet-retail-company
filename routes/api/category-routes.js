@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, Tag } = require('../../models');
 const sequelize=require('../../config/connection')
 // The `/api/categories` endpoint
 
@@ -25,10 +25,12 @@ router.get('/:id', (req, res) => {
     include:{
       model:Product
     }
-  }).then(data=>{
-    if(!data){
+  }).then(dbCategory=>{
+    if(!dbCategory){
       res.status(404).json({message:'there is no catagory by this id'})
+      return;
     }
+    res.json(dbCategory)
   }).catch(err=>{
     res.status(500).json(err)
   })
