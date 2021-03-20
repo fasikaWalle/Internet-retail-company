@@ -10,8 +10,10 @@ router.get('/', (req, res) => {
     include:{
       model:Product
     }
-  }).then(data=>{``
-    res.json(data)
+  }).then(dbCatagory=>{``
+    res.json(dbCatagory)
+  }).catch(err=>{
+    res.status(500).json(err)
   })
 });
 
@@ -27,7 +29,7 @@ router.get('/:id', (req, res) => {
     }
   }).then(dbCategory=>{
     if(!dbCategory){
-      res.status(404).json({message:'there is no catagory by this id'})
+      res.status(404).json({message:'There is no catagory by this id'})
       return;
     }
     res.json(dbCategory)
@@ -41,8 +43,10 @@ router.post('/', (req, res) => {
   // create a new category
   Category.create({
     category_name:req.body.category_name
-  }).then(data=>{
-    res.json(data)
+  }).then(dbCatagory=>{
+    res.json(dbCatagory)
+  }).catch(err=>{
+    res.status(500).json(err)
   })
 });
 
@@ -53,7 +57,7 @@ router.put('/:id', (req, res) => {
       id:req.params.id
     }
   }).then(dbCatagory=>{
-    if(!dbCatagory){res.status(404).json({message:'id not found'})
+    if(!dbCatagory){res.status(404).json({message:'There is no category by this id'})
     return;
   }
   res.json(dbCatagory)
@@ -67,7 +71,7 @@ router.delete('/:id', (req, res) => {
       id:req.params.id
     }
   }).then(dbCatagory=>{
-    if(!dbCatagory){res.status(404).json({message:'id not found'})
+    if(!dbCatagory){res.status(404).json({message:'There is no category by this id'})
     return;
   }
     res.json(dbCatagory)
