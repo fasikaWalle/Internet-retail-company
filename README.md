@@ -15,12 +15,10 @@ This application creates model of the database using sequelize library that make
 ## Installation
 First you have to make sure that you have node js in your system if you don't have you can install it from https://nodejs.org/en/ and make sure you install mysql if not just click the following link and download it https://dev.mysql.com/downloads/mysql/ then you open your terminal and type npm install to install all the necessary dependencies which are used for this application. 
 ## Usage
-Clone the code from the repository to local computer
-Open the terminal
-write npm install in the terminal and hit enter to install all the neccesary dependencies that this application uses
-Write mysql -u (database user name) -p then enter, please insert password window will display then you have to insert your database password.
-In order to use the database you have to create it by writing source db/schema.sql and then write quit to exit from mysql terminal this will create the table structure then there is already a data on seeds.sql file so write npm run seed on the terminal this will fill your tables with predefined data.
-In order to start the application write npm start.In order to test the routes you have to use Insomina or postman applications.
+- write npm install in the terminal  to install all the neccesary dependencies that this application uses
+- Write mysql -u (database user name) -p then enter, please insert password window will display then you have to insert your database password.
+- In order to use the database you have to create it by writing source db/schema.sql and then write quit to exit from mysql terminal this will create the table structure then there is already a data on seeds.sql file so write npm run seed on the terminal this will fill your tables with predefined data.
+- In order to start the application write npm start.In order to test the routes you have to use Insomina or postman applications.
 
 Walkthrough video link (https://drive.google.com/file/d/1c4cUZZr_l8nC6QxqfBPT4J3GmwZV6k0z/view?usp=sharing)
 
