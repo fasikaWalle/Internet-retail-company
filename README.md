@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 ## Description
 
-This application creates model of the database using sequelize library that makes it easy to manage our database.You can  create, update, and delete data in my database . 
+This application creates model of the database using sequelize library that makes it easy to manage our database.It also create a route which create, update, and delete data in my database . 
 ## Table of Content
 * [Installation](#Installation)
 * [Usage](#Usage)
