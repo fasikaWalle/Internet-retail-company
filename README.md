@@ -22,7 +22,7 @@ Write mysql -u (database user name) -p then enter, please insert password window
 In order to use the database you have to create it by writing source db/schema.sql and then write quit to exit from mysql terminal this will create the table structure then there is already a data on seeds.sql file so write npm run seed on the terminal this will fill your tables with predefined data.
 In order to start the application write npm start.In order to test the routes you have to use Insomina or postman applications.
 
-Walkthrough video link ()
+Walkthrough video link (https://drive.google.com/file/d/1c4cUZZr_l8nC6QxqfBPT4J3GmwZV6k0z/view?usp=sharing)
 
  ## Licence
 This Licence belongs to Apache 
